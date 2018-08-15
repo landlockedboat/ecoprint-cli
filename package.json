@@ -1,0 +1,43 @@
+{
+  "name": "ecoprint-cli",
+  "version": "0.0.0",
+  "description": "CLI for ecoprint",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikepic/ecoprint-cli.git"
+  },
+  "author": "wextia <valcazar96@gmail.com> (vikepic.github.io)",
+  "bin": {
+    "ecoprint": "cli.js"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli"
+  ],
+  "dependencies": {
+    "capitalize": "^1.0.0",
+    "ecoprint": "^1.0.3",
+    "meow": "^5.0.0",
+    "round-to": "^3.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "xo": "^0.21.0"
+  },
+  "bugs": {
+    "url": "https://github.com/vikepic/ecoprint-cli/issues"
+  },
+  "homepage": "https://github.com/vikepic/ecoprint-cli#readme",
+  "main": "index.js"
+}
