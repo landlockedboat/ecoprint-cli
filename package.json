@@ -36,9 +36,9 @@
     "ava": "^0.25.0",
     "xo": "^0.21.0"
   },
-	"ava": {
-		"verbose": true
-	},
+  "ava": {
+    "verbose": true
+  },
   "bugs": {
     "url": "https://github.com/vikepic/ecoprint-cli/issues"
   },
