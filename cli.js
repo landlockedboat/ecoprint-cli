@@ -44,7 +44,6 @@ if (flags.list) {
 
 if (input.length === 0) {
 	cli.showHelp();
-	process.exit(1);
 }
 
 if (input.length === 2) {

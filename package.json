@@ -27,7 +27,8 @@
   ],
   "dependencies": {
     "capitalize": "^1.0.0",
-    "ecoprint": "^1.0.3",
+    "ecoprint": "file:../ecoprint",
+    "execa": "^0.10.0",
     "meow": "^5.0.0",
     "round-to": "^3.0.0"
   },
@@ -35,6 +36,9 @@
     "ava": "^0.25.0",
     "xo": "^0.21.0"
   },
+	"ava": {
+		"verbose": true
+	},
   "bugs": {
     "url": "https://github.com/vikepic/ecoprint-cli/issues"
   },

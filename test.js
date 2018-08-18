@@ -1,11 +1,8 @@
-import test from 'ava';
-import ecoprintCli from '.';
+'use strict';
+const execa = require('execa');
+const test = require('ava');
 
-test('title', t => {
-	const err = t.throws(() => {
-		ecoprintCli(123);
-	}, TypeError);
-	t.is(err.message, 'Expected a string, got number');
-
-	t.is(ecoprintCli('unicorns'), 'unicorns & rainbows');
+test('main', async t => {
+	const {stdout} = await execa.shell('node ./cli.js bread');
+	t.true(stdout.length > 0);
 });

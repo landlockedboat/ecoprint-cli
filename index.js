@@ -5,15 +5,19 @@ const capitalize = require('capitalize');
 const round = require('round-to');
 
 function prodNameExists(prodName) {
-	if (!(prodName in ecoprint.products)) {
-		throw 'Product "' + prodName + '" not in product list.';
+	const {products} = ecoprint;
+	if (!(prodName in products)) {
+		throw new Error('Product "' + prodName + '" not in product list.');
 	}
 }
 
 exports.list = () => {
 	console.log('Available products:');
-	for (const prodName in ecoprint.products) {
-		console.log('  ' + capitalize(prodName));
+	const {products} = ecoprint;
+	for (const prodName in products) {
+		if (Object.prototype.hasOwnProperty.call(products, prodName)) {
+			console.log('  ' + capitalize(prodName));
+		}
 	}
 };
 
@@ -26,7 +30,7 @@ exports.compare = (oName, tName) => {
 	console.log('Ecological ecoprint of ' + oName + ' compared with ' +
 		tName + ':');
 
-	for (const i in comparisonArray) {
+	for (let i = 0; i < comparisonArray.length; ++i) {
 		const comparison = comparisonArray[i];
 		const {unit, comp} = comparison;
 
@@ -51,6 +55,10 @@ exports.describe = prodName => {
 	const product = ecoprint.products[prodName];
 
 	for (const magnitudeName in product) {
+		if (!Object.prototype.hasOwnProperty.call(product, magnitudeName)) {
+			continue;
+		}
+
 		const cost = product[magnitudeName];
 		console.log('  ' + capitalize(magnitudeName) + ' cost ' +
 			'(in ' + ecoprint.units[magnitudeName] + '): ' + cost);
